@@ -28,7 +28,11 @@ export class BailleursService {
 
   // create
   async createBailleur(bailleur: CreateBailleurDto) {
+    console.log("inside service");
+    console.log(bailleur);
     const newBailleur = await this.bailleurRepository.create(bailleur);
+    console.log("inside service");
+    console.log(newBailleur);
     await this.bailleurRepository.save(newBailleur);
 
     return newBailleur;

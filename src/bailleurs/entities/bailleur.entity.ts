@@ -11,8 +11,8 @@ class Bailleur {
   @Column()
   public prenom: string;
 
-  @Column()
-  public residences_ids: number[];
+  @Column("int", { array: true })
+  public residence_ids: number[];
 }
 
 export default Bailleur;

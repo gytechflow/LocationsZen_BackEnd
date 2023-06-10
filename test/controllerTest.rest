@@ -1,0 +1,12 @@
+###
+GET http://localhost:3000/bailleurs
+
+###
+POST http://localhost:3000/bailleurs
+content-type: application/json
+
+{   
+    "nom": "Happy Wandja",
+    "prenom": "Paul Fernand",
+    "residence_ids": [1, 3]
+}

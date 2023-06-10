@@ -1,5 +1,5 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, } from '@nestjs/common';
-import CreateBailleurDto from './dto/createBailleur.dto';
+import { Body, Controller, Delete, Get, Param, Post, Put, ValidationPipe, } from '@nestjs/common';
+import {CreateBailleurDto} from './dto/createBailleur.dto';
 import { BailleursService } from './bailleurs.service';
 import { UpdateBailleurDto } from './dto/updateBailleur.dto';
 
@@ -22,6 +22,7 @@ export class BailleursController {
   // create bailleur
   @Post()
   async createBailleur(@Body() bailleur: CreateBailleurDto) {
+    console.log(bailleur)
     return this.bailleursService.createBailleur(bailleur);
   }
 

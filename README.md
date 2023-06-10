@@ -33,13 +33,31 @@
 ## Installation
 
 ```bash
+# Install npm for packages management 
 $ npm install
+
+# Install class-validator and class-transformer to facilitate entity translation when communicate with the database
+$ npm install class-validator && npm install class-transformer
+
+# Install typeorm and postgres librairies to connect with the data base
+$ npm install @nestjs/typeorm typeorm pg
+
+# Install dotenv to get 
+$ npm install dotenv
+
 ```
 
-## Running the app
+### Database set up
+Install [Docker](https://docs.docker.com/get-docker/) to launch dabase image 
 
+There is also image for [pgAdmin](https://www.pgadmin.org/) most popular and feature rich Open Source administration and development platform for PostgreSQL.
+
+## Running the app
 ```bash
-# development
+# Launch database in a new terminal 
+$ docker compose up 
+
+# development 
 $ npm run start
 
 # watch mode
