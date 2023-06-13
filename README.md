@@ -36,6 +36,8 @@
 # Install npm for packages management 
 $ npm install
 
+$ npm install -g @nestjs/cli
+
 # Install class-validator and class-transformer to facilitate entity translation when communicate with the database
 $ npm install class-validator && npm install class-transformer
 
