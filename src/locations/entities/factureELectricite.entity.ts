@@ -6,7 +6,7 @@ class FactureElectricite {
   @PrimaryGeneratedColumn()
   public id: number;
 
-  @ManyToOne(() => Contrat, (contrat) => contrat.facture_electricites)
+  @ManyToOne(() => Contrat, (contrat) => contrat.factures_electricite)
   public contrat: Contrat;
 
   @Column()

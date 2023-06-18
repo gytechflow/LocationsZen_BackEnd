@@ -1,7 +1,7 @@
 import { Column, Double, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import Chambre from './chambre.entity'
 import Locataire from './locataire.entity'
-import FactureElectricite from './factureELectricte.entity';
+import FactureElectricite from './factureELectricite.entity';
 import FactureBail from './factureBail.entity';
 
 @Entity()
@@ -18,7 +18,7 @@ class Contrat {
   public locataire: Locataire;
 
   @OneToMany(() => FactureElectricite, (facture_electricite) => facture_electricite.contrat)
-  public facture_electricites: FactureElectricite[];
+  public factures_electricite: FactureElectricite[];
 
   @OneToMany(() => FactureBail, (facture_bail) => facture_bail.contrat)
   public factures_bail: FactureBail[];
