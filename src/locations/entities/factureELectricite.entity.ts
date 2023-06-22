@@ -10,10 +10,10 @@ class FactureElectricite {
   public contrat: Contrat;
 
   @Column()
-  public index_actuelle: string;
+  public index_actuelle: Double;
 
   @Column()
-  public last_index: string;
+  public dernier_index_paye: Double;
 
   @Column()
   public date_enregistrement: Date;

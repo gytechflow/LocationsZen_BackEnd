@@ -10,10 +10,7 @@ class FactureBail {
   public contrat: Contrat;
 
   @Column()
-  public last_month_pay: string;
-
-  @Column()
-  public last_index: string;
+  public dernier_mois_paye: Date;
 
   @Column()
   public date_enregistrement: Date;
