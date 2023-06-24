@@ -5,7 +5,7 @@ export class CreateFactureBailDto {
     contrat: Contrat;
     dernier_mois_paye: Date;
     date_enregistrement: Date;
-    montant_facture: Double
+    montant_facture: number
   }
   
   export default CreateFactureBailDto;

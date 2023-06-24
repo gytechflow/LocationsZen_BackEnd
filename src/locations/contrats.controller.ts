@@ -23,6 +23,8 @@ export class ContratsController {
   @Post()
   async createContrat(@Body() contrat: CreateContratDto) {
     console.log(contrat)
+    contrat.date_debut = new Date(contrat.date_debut);
+    contrat.date_fin = new Date(contrat.date_fin);
     return this.contratsService.createContrat(contrat);
   }
 

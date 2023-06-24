@@ -1,10 +1,10 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, ValidationPipe, } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import {CreateFactureBailDto} from './dto/createFactureBail.dto';
 import { FacturesBailService } from './facturesBail.service';
 import { UpdateFactureBailDto } from './dto/updateFactureBail.dto';
 
 @Controller('facturesBail')
-export class FactureBailController {
+export class FacturesBailController {
   constructor(private readonly facturesBailService: FacturesBailService) {}
 
   // get all facturesBail
@@ -23,6 +23,8 @@ export class FactureBailController {
   @Post()
   async createFactureBail(@Body() factureBail: CreateFactureBailDto) {
     console.log(factureBail)
+    factureBail.dernier_mois_paye = new Date(factureBail.dernier_mois_paye);
+    factureBail.date_enregistrement = new Date(factureBail.date_enregistrement);
     return this.facturesBailService.createFactureBail(factureBail);
   }
 

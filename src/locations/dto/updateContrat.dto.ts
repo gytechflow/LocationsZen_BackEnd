@@ -13,7 +13,7 @@ export class UpdateContratDto {
     factures_bail: FactureBail[];
     date_debut: Date;
     date_fin: Date;
-    prix_loyer: Double;
+    prix_loyer: number;
     index_electricite_initial: number;
 }
 

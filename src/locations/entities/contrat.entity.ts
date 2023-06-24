@@ -29,8 +29,8 @@ class Contrat {
   @Column()
   public date_fin: Date;
 
-   @Column()
-   public prix_loyer: Double;
+   @Column("float")
+   public prix_loyer: number;
 
    @Column()
    public index_electricite_initial: number;

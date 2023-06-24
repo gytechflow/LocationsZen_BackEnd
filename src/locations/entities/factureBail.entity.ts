@@ -15,7 +15,7 @@ class FactureBail {
   @Column()
   public date_enregistrement: Date;
 
-  @Column()
-  public montant_facture: Double;
+  @Column("float")
+  public montant_facture: number;
 }
 export default FactureBail;

@@ -5,14 +5,11 @@ import FactureElectricite from "../entities/factureELectricite.entity";
 import Locataire from "../entities/locataire.entity";
 
 export class CreateContratDto {
-    nom: string;
     chambre: Chambre;
     locataire: Locataire;
-    factures_electricite: FactureElectricite[];
-    factures_bail: FactureBail[];
     date_debut: Date;
     date_fin: Date;
-    prix_loyer: Double;
+    prix_loyer: number;
     index_electricite_initial: number;
   }
   

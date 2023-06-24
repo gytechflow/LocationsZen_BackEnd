@@ -9,16 +9,16 @@ class FactureElectricite {
   @ManyToOne(() => Contrat, (contrat) => contrat.factures_electricite)
   public contrat: Contrat;
 
-  @Column()
-  public index_actuelle: Double;
+  @Column("float")
+  public index_actuelle: number;
 
-  @Column()
-  public dernier_index_paye: Double;
+  @Column("float")
+  public dernier_index_paye: number;
 
   @Column()
   public date_enregistrement: Date;
 
-  @Column()
-  public montant_facture: Double;
+  @Column("float")
+  public montant_facture: number;
 }
 export default FactureElectricite;

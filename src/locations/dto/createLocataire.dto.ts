@@ -4,7 +4,7 @@ export class CreateLocataireDto {
     nom: string;
     prenom: string;
     numero_telephone: string;
-    contrat: Contrat
+    //contrat: Contrat
   }
   
   export default CreateLocataireDto;

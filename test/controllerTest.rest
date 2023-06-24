@@ -1,12 +1,62 @@
 ###
-GET http://localhost:3000/bailleurs/11
+GET http://localhost:5000/bailleurs
 
 ###
-POST http://localhost:3000/bailleurs
+POST http://localhost:5000/bailleurs
 content-type: application/json
 
 {   
     "nom": "Happy Wandja",
     "prenom": "Paul Fernand",
     "residence_ids": [1, 3]
+}
+
+
+###  Creer une nouvelle chambre
+POST http://localhost:5000/chambres
+content-type: application/json
+
+{   
+    "numero_chambre": "B36",
+    "type_chambre": "Studio"    
+}
+
+###  Creer une nouveau locataire
+POST http://localhost:5000/locataires
+content-type: application/json
+
+{   
+    "nom": "Happy Wandja",
+    "prenom": "Paul Fernand",
+    "numero_telephone": "0000"
+}
+
+###  Creer une nouveau locataire
+POST http://localhost:5000/contrats
+content-type: application/json
+
+{   
+    "chambre": {
+        "id": 3
+    },
+    "locataire": {
+        "id": 3
+    },
+    "date_debut":"12/05/2023",
+    "date_fin":"12/05/2024",
+    "prix_loyer":30000.50,
+    "index_electricite_initial":1000
+}
+
+###  Creer une nouveau locataire
+POST http://localhost:5000/facturesBail
+content-type: application/json
+
+{   
+    "contrat": {
+        "id": 2
+    },
+    "dernier_mois_paye": "12/05/2023",
+    "date_enregistrement": "12/05/2023",
+    "montant_facture": 30000.5
 }
