@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, Param, Post, Put, ValidationPipe, } from
 import {CreateContratDto} from './dto/createContrat.dto';
 import { ContratsService } from './contrats.service';
 import { UpdateContratDto } from './dto/updateContrat.dto';
+import createContratEtLocataireDto from './dto/createContratEtLocataireDto';
 
 @Controller('contrats')
 export class ContratsController {
@@ -26,6 +27,15 @@ export class ContratsController {
     contrat.date_debut = new Date(contrat.date_debut);
     contrat.date_fin = new Date(contrat.date_fin);
     return this.contratsService.createContrat(contrat);
+  }
+
+  // create contrat
+  @Post('contratEtLocataire')
+  async createContratEtLocataire(@Body() contrat: createContratEtLocataireDto) {
+    console.log(contrat)
+    // contrat.date_debut = new Date(contrat.date_debut);
+    // contrat.date_fin = new Date(contrat.date_fin);
+    return this.contratsService.createContratEtLocataire(contrat);
   }
 
   // update contrat

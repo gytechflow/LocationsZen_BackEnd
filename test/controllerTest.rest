@@ -2,6 +2,9 @@
 GET http://localhost:5000/bailleurs
 
 ###
+GET http://localhost:5000/chambres
+
+###
 POST http://localhost:5000/bailleurs
 content-type: application/json
 
@@ -37,14 +40,14 @@ content-type: application/json
 
 {   
     "chambre": {
-        "id": 3
+        "id": 4
     },
     "locataire": {
-        "id": 3
+        "id": 6
     },
     "date_debut":"12/05/2023",
     "date_fin":"12/05/2024",
-    "prix_loyer":30000.50,
+    "montant_loyer":30000.50,
     "index_electricite_initial":1000
 }
 

@@ -10,7 +10,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 const envFilePath: string = getEnvPath(`${process.cwd()}/src/common/envs`);
  
-console.log("initialize app module")
 @Module({
   imports: [
     ConfigModule.forRoot({

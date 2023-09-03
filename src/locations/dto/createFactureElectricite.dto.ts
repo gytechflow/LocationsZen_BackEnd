@@ -1,4 +1,3 @@
-import { Double } from "typeorm";
 import Contrat from "../entities/contrat.entity";
 
 export class CreateFactureElectriciteDto {

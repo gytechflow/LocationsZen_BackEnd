@@ -4,11 +4,15 @@ import { Repository } from 'typeorm';
 import CreateContratDto from './dto/createContrat.dto';
 import Contrat from './entities/contrat.entity';
 import { UpdateContratDto } from './dto/updateContrat.dto';
+import createContratEtLocataireDto from './dto/createContratEtLocataireDto';
+import Locataire from './entities/locataire.entity';
+import Chambre from './entities/chambre.entity';
 
 @Injectable()
 export class ContratsService {
   constructor(
     @InjectRepository(Contrat) private contratRepository: Repository<Contrat>,
+    @InjectRepository(Locataire) private locataireRepository: Repository<Locataire>,
   ) {}
 
   // find all
@@ -28,10 +32,34 @@ export class ContratsService {
 
   // create
   async createContrat(contrat: CreateContratDto) {
-    console.log("inside service");
     console.log(contrat);
     const newContrat = await this.contratRepository.create(contrat);
+    await this.contratRepository.save(newContrat);
+
+    return newContrat;
+  }
+
+  async createContratEtLocataire(contratEtLocataire: createContratEtLocataireDto) {
+    console.log(contratEtLocataire);
+    const locataire = new Locataire();
+    locataire.nom = contratEtLocataire.nom;
+    locataire.prenom = contratEtLocataire.prenom;
+    locataire.numero_telephone = contratEtLocataire.telephone;
+    const newLocataire = await this.locataireRepository.create(locataire);
+    await this.locataireRepository.save(newLocataire);
+
+    const contrat = new Contrat();
+    contrat.chambre = contratEtLocataire.chambre as Chambre;
+    contrat.date_debut = contratEtLocataire.date_debut;
+    contrat.date_fin = contratEtLocataire.date_fin;
+    contrat.index_electricite_initial = contratEtLocataire.index_electricite_initial;
+    contrat.montant_loyer = contratEtLocataire.montant_loyer;
+    contrat.locataire = newLocataire;
     console.log("inside service");
+    console.log(contrat.chambre.id);
+    console.log(contrat);
+
+    const newContrat = await this.contratRepository.create(contrat);
     console.log(newContrat);
     await this.contratRepository.save(newContrat);
 

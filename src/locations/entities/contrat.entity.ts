@@ -30,7 +30,7 @@ class Contrat {
   public date_fin: Date;
 
    @Column("float")
-   public prix_loyer: number;
+   public montant_loyer: number;
 
    @Column()
    public index_electricite_initial: number;
